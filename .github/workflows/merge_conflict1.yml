@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      - uses: actions/checkout@v2
       # # Creates new branch
       # - name: Create Branch
       #   uses: peterjgrainger/action-create-branch@v2.0.1
@@ -33,6 +33,9 @@ jobs:
       #     branch: 'merge_conflict_1'
 
       # Creates our merge conflict
+      - name: List directories
+        run: ls -latr
+    
       - name: Make Changes
         # uses: actions/checkout@v2
         run: sed -i -e '\@</body>@i\        <h1>This is a heading</h1>' index.html
@@ -42,9 +45,10 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "Add changes to index" -a
+        
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: 'main'
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GH_TOKEN }}
+      #     branch: 'main'
