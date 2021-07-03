@@ -37,18 +37,16 @@ jobs:
         run: ls -latr
     
       - name: Make Changes
-        # uses: actions/checkout@v2
-        run: sed -i -e '\@</body>@i\        <h1>This is a heading</h1>' index.html
+        run: actions/merge_conflict1.sh
 
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Add changes to index" -a
-        
+          git commit -m "Add changes to index" -a        
 
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GH_TOKEN }}
-      #     branch: 'main'
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: 'main'
