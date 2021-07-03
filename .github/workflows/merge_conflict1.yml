@@ -35,8 +35,7 @@ jobs:
       # Creates our merge conflict
       - name: Make Changes
         # uses: actions/checkout@v2
-        run: |
-          actions/merge_conflict.sh
+        run: sed -i -e '\@</body>@i\        <h1>This is a heading</h1>' index.html
 
       - name: Commit changes
         run: |
