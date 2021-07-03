@@ -23,15 +23,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#       - uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
-      - name: Create Branch
-        # You may pin to the exact commit or the version.
-        # uses: peterjgrainger/action-create-branch@b48b0ca0e307c9b56f059b70274984ffeaa90a43
-        uses: peterjgrainger/action-create-branch@v2.0.1
-        env:
-           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      # # Creates new branch
+      # - name: Create Branch
+      #   uses: peterjgrainger/action-create-branch@v2.0.1
+      #   env:
+      #      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #   with:
+      #     branch: 'merge_conflict_1'
+
+      # Creates our merge conflict
+      - name: Make Changes
+        uses: actions/checkout@v2
+        run: |
+          actions/merge_conflict.sh
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Add changes to index" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          # The branch to create
-          branch: 'merge_conflict_1'
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: 'main'
