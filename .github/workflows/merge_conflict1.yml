@@ -34,7 +34,7 @@ jobs:
 
       # Creates our merge conflict
       - name: Make Changes
-        uses: actions/checkout@v2
+        # uses: actions/checkout@v2
         run: |
           actions/merge_conflict.sh
 
