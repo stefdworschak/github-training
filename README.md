@@ -7,7 +7,9 @@
 1. Create a new Personal Access Token
 
 ```
-Click on your Account (top-right) > Settings > Developer Settings > Personal access tokens > Generate new token
+Click on your Account (top-right) > Settings
+> Developer Settings > Personal access tokens
+> Generate new token
 ```
 
 Direct link [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
@@ -25,11 +27,13 @@ Open the forked repo > Settings > Secrets > New repository secret
 
 ## Setup
 
-1.  Checkout to a new branch called `new_branch1`
+1. Checkout to a new branch called `new_branch1` and push it to your fork
 
 ```
 git checkout -b new_branch1
+git push origin new_branch1
 ```
+
 2. Add the below code to the body of the `index.html` file
 
 ```
@@ -83,11 +87,11 @@ You should see the below error:
 >>>>>>> 5be693431cd5e6562f8b960cc38b24a93daa7e4b (Incoming Change)
 ```
 
-### Explanation
-
 What this means is that the changes on your branches "HEAD" (Incoming Change) and the changes pulled from another branch (Incoming Change) are in conflict.
 
-The exact conflicting lines are displayed between the merge conflict markers indicated like this:
+The exact conflicting lines are always displayed between the merge conflict markers indicated by `<` (start), `=` (separator between branches) and `>` (end).
+Here a more simplified example:
+
 ```
 <<<<<<<
 branch 1 changes
@@ -96,7 +100,7 @@ branch 2 changes on the same line
 >>>>>>>
 ```
 
-A lot of editors will give you the option to accept either of the branches' versions or both, but for the purpose of this exercise simply delete the merge conflict markers and the content of the _Incoming Change_.
+A lot of editors will give you an integrated option to accept either of the branches' versions or both, but for the purpose of this exercise simply delete the merge conflict markers and the content of the _Incoming Change_.
 
 Your file should look like this after:
 ```
@@ -111,7 +115,7 @@ Your file should look like this after:
     </body>
 </html>
 ```
-3. Now that the merge conflict is resolved, add, commit and push your changes to your branch and merge your Pull Request.
+3. Now that the merge conflict is resolved; add, commit and push your changes to your branch and merge your Pull Request.
 
 ```
 git add index.html
@@ -119,4 +123,4 @@ git commit -m "Resolving merge conflict"
 git push origin main
 ```
 
-4. If you are working with other developers you should now communicate that you have merged changes into the `main` branch and they need to update their local `main` branches and any development branches.
+4. If you were working with other developers you would now communicate that you have merged your changes into the `main` branch and that they need to update their local `main` branches and any development branches they are currently working on.
