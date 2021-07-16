@@ -25,34 +25,44 @@ Direct link [https://github.com/settings/tokens/new](https://github.com/settings
 Open the forked repo > Settings > Secrets > New repository secret
 ```
 
+__TODO: ADD SCREENSHOT__
+
 
 ## Tutorial 1 - Merge Conflict
 
 ### Setup
 
-1. Checkout to a new branch called `new_branch1` and push it to your fork
+1. Open the repo in Gitpod (or clone it locally and open your IDE)
+
+1. In the terminal, checkout to a new branch called `new_branch1` and push it to your fork
 
 ```
 git checkout -b new_branch1
 git push origin new_branch1
 ```
 
-2. Add the below code to the body of the `index.html` file
+3. Add the below code to the body of the `index.html` file
 
 ```
 <h1>This is my heading</h1>
 <p>This is my paragraph</p>
 ```
 
-3. Add, commit and push your changes to your branch
+4. Add, commit and push your changes to your branch
 
 ```
 git add .
 git commit -m "Updating index file"
-git push origin new_branch
+git push origin new_branch1
 ```
 
-4. Create a new Pull Request on GitHub to your own fork's main branch (not the original repo). You should see that there is a merge conflict now.
+5. Go back to your own fork's repo and click on the "Compare & Pull Request" button
+
+6. You should see that there is a merge conflict now.
+Even though there is a merge conflict, click on "Create Pull Request" to finish the setup.
+
+__TODO: ADD A GIF__
+
 
 ### Solution - Change file and commit changes
 
@@ -62,7 +72,7 @@ git push origin new_branch
 git pull origin main
 ```
 
-The termninal should show a similar message to the one shown below. Explaining that there is a merge conflict in the index.html file which will have to be resolved before being able to merge.
+The terminal should show a similar message to the one shown below. Explaining that there is a merge conflict in the index.html file which will have to be resolved before being able to merge.
 
 ```
 remote: Enumerating objects: 5, done.
@@ -78,7 +88,7 @@ CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-2. To resolve the merge conflict, open the index file.
+2. Open the index file and have a look at the merge conflict to better understand what is going on.
 You should see the below error:
 
 ```
@@ -87,23 +97,23 @@ You should see the below error:
 	    <p>This is a paragraph</p>
 ======= 
         <h1>This is a heading</h1>
->>>>>>> 5be693431cd5e6562f8b960cc38b24a93daa7e4b (Incoming Change)
+>>>>>>> 000aaa000aaa000aaa000aaa (Incoming Change)
 ```
 
-What this means is that the changes on your branch's "HEAD" (Incoming Change) and the changes pulled from another branch (Incoming Change) are in conflict.
+What this means is that the changes on your branch's "HEAD" (Current Change) and the changes pulled from another branch (Incoming Change) are in conflict.
 
-The exact conflicting lines are always displayed between the merge conflict markers indicated by `<` (start), `=` (separator between branches) and `>` (end).
+The exact conflicting lines are always displayed between the merge conflict markers indicated by `<<<<<<< HEAD` (start), `=======` (separator between branches) and `>>>>>>> 000aaa000aaa000aaa000aaa` (end).
 Here a more simplified example:
 
 ```
-<<<<<<<
+<<<<<<< HEAD
 branch 1 changes
 ======= 
 branch 2 changes on the same line
->>>>>>>
+>>>>>>> 000aaa000aaa000aaa000aaa
 ```
 
-A lot of editors will give you an integrated option to accept either of the branches' versions or both, but for the purpose of this exercise simply delete the merge conflict markers and the content of the _Incoming Change_.
+3. To resolve the merge conflict simply delete the merge conflict markers (see above) and the content of the _Incoming Change_. A lot of editors will give you an integrated option to accept either of the branches' versions or both for ease of use as well.
 
 Your file should look like this after:
 ```
@@ -118,12 +128,25 @@ Your file should look like this after:
     </body>
 </html>
 ```
-3. Now that the merge conflict is resolved; add, commit and push your changes to your branch and merge your Pull Request.
+3. Now that the merge conflict is resolved; add, commit and push your changes to your branch.
 
 ```
 git add index.html
 git commit -m "Resolving merge conflict"
-git push origin main
+git push origin branch1
 ```
 
-4. If you were working with other developers you would now communicate that you have merged your changes into the `main` branch and that they need to update their local `main` branches and any development branches they are currently working on.
+4. Go back to your fork's GitHub repo, click on "Pull Requests" and open the Pull Request you created.
+
+1. Scroll down to the Checks section. It should now say that there are no Merge Conflicts.
+
+1. Click the "Merge pull request" Button to merge your changes into your fork's main branch.
+
+1. Go back to your terminal, checkout to your main branch and pull the changes from GitHub
+
+```
+git checkout main
+git pull origin main
+```
+
+8. If you were working with other developers you would now communicate that you have merged your changes into the `main` branch and that they need to update their local `main` branches and any development branches they are currently working on.
