@@ -4,6 +4,9 @@
 
 1. Fork the repository
 
+1. Go to your fork's "Actions" tab and click on the button saying "I understand my workflows, go ahead and enable them".
+This will enable the different automated workflows we have created to enable the tutorials. The tutorials will not work otherwise.
+
 1. Create a new Personal Access Token
 
 ```
@@ -14,7 +17,7 @@ Click on your Account (top-right) > Settings
 
 Direct link [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 
-3. Give the token a name (e.g. github-training) and select `repo` as scope
+4. Give the token a name (e.g. github-training) and select `repo` as scope
 1. Copy the generated token 
 1. Create a new Secret in your forked GitHub repo with the name `GH_TOKEN` and paste the generated token
 
@@ -23,9 +26,9 @@ Open the forked repo > Settings > Secrets > New repository secret
 ```
 
 
-# Tutorial 1 - Merge Conflict
+## Tutorial 1 - Merge Conflict
 
-## Setup
+### Setup
 
 1. Checkout to a new branch called `new_branch1` and push it to your fork
 
@@ -51,7 +54,7 @@ git push origin new_branch
 
 4. Create a new Pull Request on GitHub to your own fork's main branch (not the original repo). You should see that there is a merge conflict now.
 
-## Solution - Change file and commit changes
+### Solution - Change file and commit changes
 
 1. Go back to your terminal and pull the changes from the main branch into your branch.
 
