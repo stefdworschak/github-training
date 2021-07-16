@@ -90,7 +90,7 @@ You should see the below error:
 >>>>>>> 5be693431cd5e6562f8b960cc38b24a93daa7e4b (Incoming Change)
 ```
 
-What this means is that the changes on your branches "HEAD" (Incoming Change) and the changes pulled from another branch (Incoming Change) are in conflict.
+What this means is that the changes on your branch's "HEAD" (Incoming Change) and the changes pulled from another branch (Incoming Change) are in conflict.
 
 The exact conflicting lines are always displayed between the merge conflict markers indicated by `<` (start), `=` (separator between branches) and `>` (end).
 Here a more simplified example:
