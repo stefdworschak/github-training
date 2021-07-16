@@ -4,7 +4,7 @@
 
 1. Fork the repository
 
-1. Go to your fork's "Actions" tab and click on the button saying "I understand my workflows, go ahead and enable them".
+1. Go to your fork's `Actions` tab and click on the button saying `I understand my workflows, go ahead and enable them`.
 This will enable the different automated workflows we have created to enable the tutorials. The tutorials will not work otherwise.
 
 1. Create a new Personal Access Token
