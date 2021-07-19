@@ -4,28 +4,39 @@
 
 1. Fork the repository
 
+![Forking screenshot](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/fork_repo.png)
+
 1. Go to your fork's `Actions` tab and click on the button saying `I understand my workflows, go ahead and enable them`.
 This will enable the different automated workflows we have created to enable the tutorials. The tutorials will not work otherwise.
 
+![Enable repo actions](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/activate_actions.png)
+
 1. Create a new Personal Access Token
 
+Direct link to the form: [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
+
+Or navigate there through the GitHub UI:
 ```
 Click on your Account (top-right) > Settings
 > Developer Settings > Personal access tokens
 > Generate new token
 ```
 
-Direct link [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
-
 4. Give the token a name (e.g. github-training) and select `repo` as scope
-1. Copy the generated token 
-1. Create a new Secret in your forked GitHub repo with the name `GH_TOKEN` and paste the generated token
+
+![Create personal access token](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/assign_scope.png)
+
+5. Copy the generated token 
+
+![Copy token](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/copy_generated_token.png)
+
+6. Create a new Secret in your forked GitHub repo with the name `GH_TOKEN` and paste the generated token
 
 ```
 Open the forked repo > Settings > Secrets > New repository secret
 ```
 
-__TODO: ADD SCREENSHOT__
+![Create repo secret](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/create_repo_secret.png)
 
 
 ## Tutorial 1 - Merge Conflict
