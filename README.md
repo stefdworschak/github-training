@@ -6,12 +6,12 @@
 
 ![Forking screenshot](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/fork_repo.png)
 
-1. Go to your fork's `Actions` tab and click on the button saying `I understand my workflows, go ahead and enable them`.
+2. Go to your fork's `Actions` tab and click on the button saying `I understand my workflows, go ahead and enable them`.
 This will enable the different automated workflows we have created to enable the tutorials. The tutorials will not work otherwise.
 
 ![Enable repo actions](https://gist.github.com/stefdworschak/7b6e93f38b98256fd5ce00982b3ba1ca/raw/25e3632cfea3a5308cb75c24440f75cd85b48ab3/activate_actions.png)
 
-1. Create a new Personal Access Token
+3. Create a new Personal Access Token
 
 Direct link to the form: [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 
@@ -45,7 +45,7 @@ Open the forked repo > Settings > Secrets > New repository secret
 
 1. Open the repo in Gitpod (or clone it locally and open your IDE)
 
-1. In the terminal, checkout to a new branch called `new_branch1` and push it to your fork
+2. In the terminal, checkout to a new branch called `new_branch1` and push it to your fork
 
 ```
 git checkout -b new_branch1
