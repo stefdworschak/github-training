@@ -63,7 +63,7 @@ git push origin new_branch1
 
 ```
 git add .
-git commit -m "Updating index file"
+git commit -m "Update index file"
 git push origin new_branch1
 ```
 
@@ -143,7 +143,7 @@ Your file should look like this after:
 
 ```
 git add index.html
-git commit -m "Resolving merge conflict"
+git commit -m "Resolve merge conflict"
 git push origin branch1
 ```
 
